@@ -1,14 +1,15 @@
 /**
  * navbar.js — ARRMARE GROUP
- * Gestiona: scroll effect, hamburger menu, cierre al click en links
+ * Gestiona: scroll effect, off-canvas menu, cierre al click en links
  */
 
 function initNavbar() {
   const navbar    = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('nav-menu');
+  const sideMenu  = document.getElementById('side-menu');
+  const closeBtn  = document.getElementById('close-btn');
 
-  if (!navbar || !hamburger || !navMenu) return;
+  if (!navbar || !hamburger || !sideMenu || !closeBtn) return;
 
   // ── Scroll effect ──────────────────────────────────────
   const handleScroll = () => {
@@ -18,32 +19,36 @@ function initNavbar() {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // estado inicial
 
-  // ── Hamburger toggle ───────────────────────────────────
+  // ── Función para cerrar menú ──────────────────────
+  function closeMenu() {
+    sideMenu.classList.remove('active');
+    sideMenu.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = ''; // Restaura el scroll de la página
+  }
+
+  // ── Abrir menú ───────────────────────────────────
   hamburger.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('active');
-    hamburger.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    sideMenu.classList.add('active');
+    sideMenu.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden'; // Bloquea el scroll del fondo
   });
 
+  // ── Cerrar menú con el botón X ───────────────────
+  closeBtn.addEventListener('click', closeMenu);
+
   // ── Cerrar al hacer click en un enlace ────────────────
-  navMenu.querySelectorAll('a').forEach(link => {
+  sideMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
 
   // ── Cerrar al hacer click fuera del menú ─────────────
   document.addEventListener('click', (e) => {
-    if (navMenu.classList.contains('active') &&
-        !navMenu.contains(e.target) &&
+    if (sideMenu.classList.contains('active') &&
+        !sideMenu.contains(e.target) &&
         !hamburger.contains(e.target)) {
       closeMenu();
     }
   });
-
-  function closeMenu() {
-    navMenu.classList.remove('active');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
 }
