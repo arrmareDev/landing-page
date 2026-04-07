@@ -1,0 +1,89 @@
+/* ===================================
+   COMMITMENT — ARRMARE GROUP
+   =================================== */
+.commitment {
+  padding: var(--section-pad-v) var(--section-pad-h);
+  background: var(--color-white);
+}
+
+.commitment-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Visual */
+.commitment-visual {
+  position: relative;
+}
+
+.commitment-visual img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  filter: grayscale(25%);
+  transition: filter 0.6s;
+}
+
+.commitment-visual:hover img {
+  filter: grayscale(0%);
+}
+
+.commitment-quote {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  background: var(--color-dark);
+  padding: 32px 36px;
+  max-width: 280px;
+}
+
+.commitment-quote blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--color-accent-lt);
+  line-height: 1.6;
+}
+
+/* Text */
+.commitment-text h2 {
+  color: var(--color-dark);
+  margin-bottom: 28px;
+}
+
+.commitment-text p {
+  font-size: 0.95rem;
+  color: var(--color-gray-dark);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+/* Pillars */
+.commitment-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: var(--border-dark);
+}
+
+.pillar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-dark);
+}
+
+.pillar-icon {
+  font-size: 0.5rem;
+  color: var(--color-accent);
+}

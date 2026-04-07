@@ -1,0 +1,134 @@
+/* ===================================
+   NAVBAR — ARRMARE GROUP
+   =================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 28px var(--section-pad-h);
+  transition: background-color 0.5s var(--ease-out),
+              padding 0.4s var(--ease-out),
+              backdrop-filter 0.4s;
+}
+
+.navbar.scrolled {
+  background-color: rgba(10, 10, 10, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 18px var(--section-pad-h);
+  border-bottom: var(--border-light);
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  color: var(--color-white);
+}
+
+.logo-main {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+
+.nav-menu li a {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-menu li a:hover {
+  color: var(--color-white);
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-accent);
+  transition: width 0.35s var(--ease-out);
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* CTA nav */
+.nav-cta {
+  padding: 8px 20px !important;
+  border: 1px solid rgba(255,255,255,0.4) !important;
+  transition: border-color 0.3s, color 0.3s, background 0.3s !important;
+}
+
+.nav-cta:hover {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+  color: var(--color-white) !important;
+}
+
+.nav-cta::after {
+  display: none !important;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-white);
+  transition: transform 0.35s var(--ease-out), opacity 0.25s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(4.5px, 4.5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-8px);
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(4.5px, -4.5px);
+}

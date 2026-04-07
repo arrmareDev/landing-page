@@ -1,0 +1,34 @@
+/* ===================================
+   VARIABLES GLOBALES — ARRMARE GROUP
+   =================================== */
+:root {
+  /* Colores */
+  --color-black:     #0a0a0a;
+  --color-dark:      #111111;
+  --color-mid:       #1c1c1c;
+  --color-gray-dark: #444444;
+  --color-gray:      #888888;
+  --color-gray-light:#cccccc;
+  --color-off-white: #f5f4f0;
+  --color-white:     #ffffff;
+  --color-accent:    #b8a07a;   /* Dorado sobrio */
+  --color-accent-lt: #d4bc98;
+
+  /* Tipografía */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Espaciado */
+  --section-pad-v: 120px;
+  --section-pad-h: 6vw;
+  --max-width:     1280px;
+
+  /* Transiciones */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.7, 0, 0.84, 0);
+  --duration:  0.55s;
+
+  /* Bordes */
+  --border-light: 1px solid rgba(255,255,255,0.1);
+  --border-dark:  1px solid rgba(0,0,0,0.08);
+}

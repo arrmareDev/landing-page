@@ -1,0 +1,93 @@
+/* ===================================
+   ABOUT — ARRMARE GROUP
+   =================================== */
+.about {
+  padding: var(--section-pad-v) var(--section-pad-h);
+  background: var(--color-white);
+}
+
+.about-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-text h2 {
+  margin-bottom: 32px;
+  color: var(--color-dark);
+}
+
+.about-text p {
+  font-size: 0.95rem;
+  color: var(--color-gray-dark);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+.about-text p strong {
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.about-text .btn-primary {
+  margin-top: 20px;
+}
+
+/* Visual side */
+.about-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.about-img-wrapper {
+  position: relative;
+}
+
+.about-img-wrapper img {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+}
+
+.about-img-accent {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 60%;
+  height: 60%;
+  border: 1px solid var(--color-accent);
+  z-index: -1;
+}
+
+/* Stats */
+.about-stats {
+  display: flex;
+  gap: 40px;
+  padding-top: 12px;
+  border-top: var(--border-dark);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--color-dark);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+}
