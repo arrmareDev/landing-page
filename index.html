@@ -58,13 +58,10 @@
       </button>
     </div>
 <ul class="side-nav-menu">
-      <li><a href="index.html#nosotros">Nosotros</a></li>
-      
-      <li><a href="empresas.html">Empresas</a></li>
-      
-      <li><a href="index.html#unidades">Unidades</a></li>
-      <li><a href="index.html#compromiso">Compromiso</a></li>
-      <li><a href="index.html#contacto" class="side-nav-cta">Contacto</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#unidades">Unidades</a></li>
+      <li><a href="#compromiso">Compromiso</a></li>
+      <li><a href="#contacto" class="side-nav-cta">Contacto</a></li>
     </ul>
   </div>
 
@@ -194,54 +191,55 @@
   </section>
 
   <!-- ===== UNIDADES DE NEGOCIO ===== -->
-  <section id="unidades" class="units reveal-section">
+<section id="unidades" class="units reveal-section">
     <div class="units-header">
       <span class="section-label">03 — Unidades de Negocio</span>
       <h2>Sectores donde operamos</h2>
     </div>
-    <div class="units-grid">
-
-      <article class="unit-card">
+    
+    <div class="units-grid" id="units-grid-view">
+      
+      <article class="unit-card" data-target="floricultura" style="cursor: pointer;">
         <div class="unit-number">01</div>
         <div class="unit-content">
           <h3>Floricultura y Regalos de Lujo</h3>
-          <p>Un ecosistema especializado donde cada marca refleja sofisticación, detalle y una propuesta de valor única orientada a experiencias premium.</p>
+          <p>Un ecosistema especializado donde cada marca refleja sofisticación, detalle y una propuesta de valor única...</p>
         </div>
         <div class="unit-arrow">→</div>
       </article>
 
-      <article class="unit-card">
+      <article class="unit-card" data-target="tecnologia" style="cursor: pointer;">
         <div class="unit-number">02</div>
         <div class="unit-content">
           <h3>Tecnología</h3>
-          <p>Soluciones tecnológicas estratégicas para floricultura y gastronomía: sistemas integrales que optimizan operación, trazabilidad y rentabilidad.</p>
+          <p>Soluciones tecnológicas estratégicas para floricultura y gastronomía: sistemas integrales que optimizan operación...</p>
         </div>
         <div class="unit-arrow">→</div>
       </article>
 
-      <article class="unit-card">
+      <article class="unit-card" data-target="imprenta" style="cursor: pointer;">
         <div class="unit-number">03</div>
         <div class="unit-content">
           <h3>Imprenta, Diseño & Packaging</h3>
-          <p>Soluciones integrales que fortalecen la identidad de marca, combinando concepto visual, estructura y producción de alto estándar.</p>
+          <p>Soluciones integrales que fortalecen la identidad de marca, combinando concepto visual, estructura y producción...</p>
         </div>
         <div class="unit-arrow">→</div>
       </article>
 
-      <article class="unit-card">
+      <article class="unit-card" data-target="rosas" style="cursor: pointer;">
         <div class="unit-number">04</div>
         <div class="unit-content">
-          <h3>Rosas Ecuatorianas Premium</h3>
-          <p>Producción y distribución de rosas ecuatorianas de alta gama con estándar premium en cada etapa, desde el cultivo hasta la entrega final.</p>
+          <h3>Productora y Distribuidora de Rosas Ecuatorianas  </h3>
+          <p>Producción y distribución de rosas ecuatorianas de alta gama con estándar premium en cada etapa...</p>
         </div>
         <div class="unit-arrow">→</div>
       </article>
 
-      <article class="unit-card">
+      <article class="unit-card" data-target="salud" style="cursor: pointer;">
         <div class="unit-number">05</div>
         <div class="unit-content">
           <h3>Salud y Bienestar</h3>
-          <p>Centros de terapias alternativas y tiendas especializadas con enfoque holístico: equilibrio físico, mental y emocional para el bienestar consciente.</p>
+          <p>Centros de terapias alternativas y tiendas especializadas con enfoque holístico: equilibrio físico, mental...</p>
         </div>
         <div class="unit-arrow">→</div>
       </article>
@@ -250,11 +248,113 @@
         <div class="unit-number">+</div>
         <div class="unit-content">
           <h3>En expansión continua</h3>
-          <p>Nuestro modelo de holding nos permite identificar y desarrollar nuevas oportunidades de negocio de alto valor estratégico.</p>
+          <p>Nuestro modelo de holding nos permite identificar y desarrollar nuevas oportunidades de negocio...</p>
         </div>
-        <div class="unit-arrow">→</div>
       </article>
+    </div>
 
+    <div class="unit-detail-view" id="unit-detail-view" style="display: none;">
+      
+      <button class="btn-back" id="btn-back-units">
+        ← Volver a Sectores
+      </button>
+
+      <div class="detail-header">
+        <h2 id="detail-title">Título del Sector</h2>
+        <p id="detail-text">Texto dinámico del sector...</p>
+      </div>
+
+      <div class="companies-grid" id="detail-companies-grid">
+        
+        <article class="company-card" data-category="floricultura">
+          <div class="company-logo">
+            <img src="assets/img/Galana BN.png" alt="Logotipo de Galana">
+          </div>
+          <div class="company-info">
+            <span class="company-tag">Floricultura</span>
+            <h3>Galana Atelier Floral</h3>
+            <p>Flores y regalos de lujo. Una propuesta de valor única orientada a experiencias premium y sofisticadas.</p>
+          </div>
+        </article>
+
+        <article class="company-card" data-category="floricultura">
+          <div class="company-logo">
+            <img src="assets/img/Birds BN.png" alt="Logotipo de Birds">
+          </div>
+          <div class="company-info">
+            <span class="company-tag">Floricultura</span>
+            <h3>Birds Luxury Flowers</h3>
+            <p>Arreglos florales premium y experiencias exclusivas con un alto enfoque en el diseño botánico.</p>
+          </div>
+        </article>
+
+                <article class="company-card" data-category="floricultura">
+          <div class="company-logo">
+            <img src="assets/img/Aristocrat BN.png" alt="Logotipo de Aristocrat">
+          </div>
+          <div class="company-info">
+            <span class="company-tag">Floricultura</span>
+            <h3>Aristocrat</h3>
+            <p>Regalos para hombres y mujeres con un enfoque en la calidad y el diseño.</p>
+          </div>
+        </article>
+
+        <article class="company-card" data-category="tecnologia">
+          <div class="company-logo">
+            <img src="assets/img/Monarca BN.png" alt="Logotipo de Monarca">
+          </div>
+          <div class="company-info">
+            <span class="company-tag">Tecnología</span>
+            <h3>Monarca Technology</h3>
+            <p>Soluciones tecnológicas estratégicas integrales que optimizan la operación, trazabilidad y rentabilidad.</p>
+          </div>
+        </article>
+
+        <article class="company-card" data-category="imprenta">
+          <div class="company-logo">
+            <img src="assets/img/Reichs Branding Lab BN.png" alt="Logotipo de Reichs">
+          </div>
+          <div class="company-info">
+            <span class="company-tag">Imprenta & Packaging</span>
+            <h3>Reichs Branding Lab</h3>
+            <p>Concepto visual, diseño de marca y producción de packaging de alto estándar.</p>
+          </div>
+        </article>
+
+        <article class="company-card" data-category="rosas">
+          <div class="company-logo">
+            <img src="assets/img/Rey Roses BN.png" alt="Logotipo de Rey Rosses">
+          </div>
+          <div class="company-info">
+            <span class="company-tag">Rosas Premium</span>
+            <h3>Rey Roses</h3>
+            <p>Producción y distribución de rosas ecuatorianas de alta gama con estándar premium internacional.</p>
+          </div>
+        </article>
+
+        <article class="company-card" data-category="s">
+          <div class="company-logo">
+            <img src="assets/img/Galana BN.png" alt="Logotipo de Galana">
+          </div>
+          <div class="company-info">
+            <span class="company-tag">Floricultura</span>
+            <h3>Galana Atelier Floral</h3>
+            <p>Flores y regalos de lujo. Una propuesta de valor única orientada a experiencias premium y sofisticadas.</p>
+          </div>
+        </article>
+
+        <article class="company-card" data-category="salud">
+          <div class="company-logo">
+            <img src="assets/img/Solkan BN.png" alt="Logotipo de Solkan">
+          </div>
+          <div class="company-info">
+            <span class="company-tag">Floricultura</span>
+            <h3>Solkan</h3>
+            <p>Fisioterapia.</p>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
@@ -345,6 +445,7 @@
   <script src="js/hero.js"></script>
   <script src="js/scrollReveal.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/units.js"></script> </body>
 
 </body>
 </html>

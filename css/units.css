@@ -146,3 +146,141 @@
   color: var(--color-accent-lt);
   transform: translateX(4px);
 }
+
+/* ===================================
+   VISTA DE DETALLE: SECTOR Y EMPRESAS
+   =================================== */
+.unit-detail-view {
+  padding-top: 20px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-back {
+  background: transparent;
+  border: none;
+  color: var(--color-text, #111);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 60px;
+  transition: opacity 0.3s;
+}
+
+.btn-back:hover {
+  opacity: 0.6;
+}
+
+.detail-header {
+  max-width: 900px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.detail-header h2 {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: 3rem;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.detail-header p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* --- Cuadrícula de Empresas (Dark Theme) --- */
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  text-align: left;
+}
+
+.company-card {
+  background: #0a0a0a; /* Fondo oscuro */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.company-logo {
+  height: 220px;
+  background: #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px;
+}
+
+.company-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* Esta línea vuelve el logo completamente blanco */
+  filter: brightness(0) invert(1); 
+  transition: filter 0.3s ease;
+  /* Hace que el logo brille un poquito al pasar el mouse por la tarjeta */
+.company-card:hover .company-logo img {
+  opacity: 0.8;
+}
+}
+.company-info {
+  padding: 30px;
+}
+
+.company-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent, #cda434);
+  margin-bottom: 15px;
+}
+
+.company-info h3 {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.company-info p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Ocultar tarjetas dinámicamente */
+.company-card.hide {
+  display: none !important;
+}
+
+#unidades {
+  height: auto !important;
+  min-height: 100vh;
+  overflow: visible !important;
+}
+
+.unit-detail-view {
+  padding-bottom: 100px; /* Le da aire al final para que no choque con el footer */
+}
