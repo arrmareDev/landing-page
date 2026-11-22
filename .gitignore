@@ -27,3 +27,6 @@ dist-ssr
 .env
 contact-api/.env
 contact-api/node_modules
+
+# relé PHP: la configuración real nunca se sube
+contact-api/relay-php/config.php

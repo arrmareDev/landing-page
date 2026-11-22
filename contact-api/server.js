@@ -9,10 +9,12 @@ const {
   CORS_ORIGINS = '',
   SMTP_HOST = '', SMTP_PORT = '465', SMTP_SECURE = 'true', SMTP_USER = '', SMTP_PASS = '',
   MAIL_TO = '', MAIL_FROM = SMTP_USER,
+  // Alternativa al SMTP (si el VPS bloquea los puertos de correo): relé PHP en el hosting, ver relay-php/
+  RELAY_URL = '', RELAY_TOKEN = '',
 } = process.env
 
 const origins = CORS_ORIGINS.split(',').map(s => s.trim()).filter(Boolean)
-const dryRun = !SMTP_HOST
+const dryRun = !SMTP_HOST && !RELAY_URL
 const transporter = dryRun
   ? nodemailer.createTransport({ jsonTransport: true })
   : nodemailer.createTransport({
@@ -50,9 +52,22 @@ app.post('/api/contact', limiter, async (req, res) => {
 
   try {
     const { html, text } = buildContactEmail({ name, email, interest, message })
+    const subject = `Consulta web — ${interest}`
+
+    if (RELAY_URL) {
+      const relayRes = await fetch(RELAY_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-Relay-Token': RELAY_TOKEN },
+        body: JSON.stringify({ subject, text, html, replyTo: email, replyName: name }),
+        signal: AbortSignal.timeout(15000),
+      })
+      if (!relayRes.ok) throw new Error(`el relé respondió ${relayRes.status}`)
+      return res.json({ ok: true })
+    }
+
     const info = await transporter.sendMail({
       from: MAIL_FROM, to: MAIL_TO, replyTo: `"${name.replace(/"/g, '')}" <${email}>`,
-      subject: `Consulta web — ${interest}`,
+      subject,
       text, html,
     })
     if (dryRun) console.log('[modo prueba] correo NO enviado:', info.message)
