@@ -264,7 +264,7 @@
 .drawer__sub { font-family: var(--font-body); font-size: .7rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: var(--color-accent); padding-bottom: 14px; border-bottom: var(--line-dark); }
 .drawer__companies { display: flex; flex-direction: column; }
 .co { display: grid; grid-template-columns: 120px 1fr; gap: 22px; padding: 24px 0; border-bottom: var(--line-dark); }
-.co__logo { background: var(--color-black); height: 110px; display: grid; grid-template-rows: 100%; place-items: center; padding: 16px; overflow: hidden; transition: background .4s; }
+.co__logo { background: var(--color-black); height: 110px; display: grid; grid-template-rows: 100%; place-items: center; padding: 8px; overflow: hidden; transition: background .4s; }
 .co:hover .co__logo { background: #1b1814; }
 .co__logo img { height: 100%; width: auto; max-width: 100%; object-fit: contain; }
 .co__logo span { font-family: var(--font-display); color: #fff; text-align: center; font-size: 1rem; line-height: 1.15; letter-spacing: .06em; }
@@ -273,7 +273,7 @@
 .co__info p { font-size: .92rem; color: var(--color-gray-dark); margin-bottom: 14px; }
 .co__btn { padding: 12px 24px; }
 .co__soon { font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--color-gray); }
-@media (max-width: 520px) { .co { grid-template-columns: 1fr; } .co__logo { height: 90px; } .drawer__body, .drawer__cover { padding: 24px; } }
+@media (max-width: 520px) { .co { grid-template-columns: 1fr; } .co__logo { height: 128px; padding: 4px; } .drawer__body, .drawer__cover { padding: 24px; } }
 
 /* ---------- Compromiso ---------- */
 .commitment__grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
