@@ -1,0 +1,14 @@
+Options -Indexes
+
+# Nadie debe poder abrir la configuración desde el navegador
+<Files "config.php">
+    Require all denied
+</Files>
+<Files "config.example.php">
+    Require all denied
+</Files>
+
+# Opcional, tras probar que todo funciona: solo aceptar peticiones desde el VPS
+# <Files "relay.php">
+#     Require ip 107.170.73.21
+# </Files>

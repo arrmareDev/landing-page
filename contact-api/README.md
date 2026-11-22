@@ -1,6 +1,6 @@
 # contact-api
 
-Recibe el formulario de la web y lo envía por correo (SMTP). Sin base de datos.
+Recibe el formulario de la web y lo envía por correo, por SMTP o, si el VPS bloquea el SMTP, mediante un relé PHP en el hosting (`relay-php/`). Sin base de datos.
 
 ## Probar en local
 ```bash
@@ -25,5 +25,7 @@ y reinicia `npm run dev`. Sin esa variable, el formulario abre el correo del vis
    location /api/ { proxy_pass http://127.0.0.1:3001; proxy_set_header X-Forwarded-For $remote_addr; }
    ```
 4. Compila la web con `VITE_CONTACT_ENDPOINT=/api/contact` (misma dominio, sin CORS).
+
+Si el VPS bloquea los puertos de correo (p. ej. DigitalOcean), usa `RELAY_URL` y `RELAY_TOKEN` en el `.env` en lugar del SMTP: ver [`relay-php/README.md`](relay-php/README.md).
 
 Incluye: validación, campo trampa anti-spam, límite de 5 envíos por IP cada 10 min, HTML escapado y `Reply-To` del visitante.
