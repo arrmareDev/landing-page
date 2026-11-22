@@ -1,0 +1,59 @@
+# /etc/nginx/sites-available/arrmaregroup.com  (ejemplo; ajusta rutas y dominio)
+server {
+    server_name arrmaregroup.com www.arrmaregroup.com;
+    root /var/www/arrmaregroup/dist;
+    index index.html;
+
+    # Compresión
+    gzip on;
+    gzip_comp_level 6;
+    gzip_min_length 1024;
+    gzip_vary on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+
+    # Cabeceras de seguridad básicas
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    add_header X-Frame-Options SAMEORIGIN always;
+
+    # Archivos con hash de Vite: caché de 1 año
+    location /assets/ {
+        add_header Cache-Control "public, max-age=31536000, immutable";
+        try_files $uri =404;
+    }
+
+    # Fuentes e imágenes (sin hash): 30 días
+    location ~* ^/(fonts|img)/ {
+        add_header Cache-Control "public, max-age=2592000";
+        try_files $uri =404;
+    }
+
+    # index.html: siempre revalidar para que los despliegues se vean al instante
+    location = /index.html {
+        add_header Cache-Control "no-cache";
+    }
+
+    # API del formulario de contacto (contact-api con pm2)
+    location /api/ {
+        proxy_pass http://127.0.0.1:3001;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Rutas válidas de la app (inicio ES/EN y política de privacidad ES/EN)
+    location ~ ^/(en/?|privacidad/?|en/privacy/?)?$ {
+        add_header Cache-Control "no-cache";
+        try_files /index.html =404;
+    }
+
+    # Cualquier otra ruta: 404 real (código 404) mostrando la página 404 de la app
+    error_page 404 /index.html;
+    location / {
+        try_files $uri =404;
+    }
+
+    # SSL: lo agrega certbot (certbot --nginx -d arrmaregroup.com -d www.arrmaregroup.com)
+    listen 80;
+}

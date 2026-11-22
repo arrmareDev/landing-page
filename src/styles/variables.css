@@ -1,0 +1,28 @@
+/* ===================================
+   VARIABLES — ARRMARE GROUP
+   =================================== */
+:root {
+  --color-black:      #0a0a0a;
+  --color-dark:       #111111;
+  --color-mid:        #1c1c1c;
+  --color-gray-dark:  #444444;
+  --color-gray:       #888888;
+  --color-gray-light: #cccccc;
+  --color-off-white:  #f5f4f0;
+  --color-white:      #ffffff;
+  --color-accent:     #b8a07a;
+  --color-accent-lt:  #d4bc98;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --section-pad:  clamp(64px, 7vw, 104px);
+  --gutter:       clamp(20px, 4vw, 56px);
+  --container:    1240px;
+  --nav-h:        76px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --line-light: 1px solid rgba(255, 255, 255, 0.12);
+  --line-dark:  1px solid rgba(0, 0, 0, 0.1);
+}
