@@ -52,7 +52,7 @@ export default function UnitDrawer({ unit, onClose }: Props) {
                   <li key={c.name} className="co">
                     <div className="co__logo">
                       {c.logo
-                        ? <img src={c.logo} alt={u.logoAlt(c.name)} width="500" height="500" loading="lazy" decoding="async" />
+                        ? <img src={c.logo} alt={u.logoAlt(c.name)} width="500" height="500" />
                         : <span>{c.name}</span>}
                     </div>
                     <div className="co__info">

@@ -243,9 +243,13 @@
 .drawer.is-open .drawer__backdrop { opacity: 1; }
 .drawer__panel {
   position: absolute; top: 0; right: 0; bottom: 0; width: min(640px, 100%); background: var(--color-white); overflow-y: auto; overscroll-behavior: contain;
-  transform: translateX(100%); transition: transform .7s var(--ease-out);
+  transform: translate3d(100%, 0, 0); transition: transform .7s var(--ease-out);
+  backface-visibility: hidden; -webkit-overflow-scrolling: touch;
 }
-.drawer.is-open .drawer__panel { transform: none; }
+/* translate3d(0) (en vez de none) mantiene el panel en su propia capa y evita que el móvil lo pinte a medias */
+.drawer.is-open .drawer__panel { transform: translate3d(0, 0, 0); }
+/* El desenfoque del fondo sobre un panel animado hace que algunos móviles pinten el texto cortado */
+@media (max-width: 760px) { .drawer__backdrop { backdrop-filter: none; background: rgba(10,10,10,.72); } }
 .drawer__cover { position: relative; min-height: 280px; display: flex; align-items: flex-end; padding: 32px; color: #fff; background: radial-gradient(120% 90% at 20% 0%, #2b261c 0%, #121212 60%) center / cover; }
 .drawer__cover::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.35), rgba(10,10,10,.88)); }
 .drawer__cover-text { position: relative; }
