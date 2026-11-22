@@ -26,17 +26,17 @@ export const unitMeta: { id: UnitId; image?: string; companies: { name: string; 
     id: 'floricultura',
     image: '/img/floricultura.webp',
     companies: [
-      { name: 'Galana Atelier Floral', logo: '/img/galana-bn.webp', url: 'https://galana.pe' },
-      { name: 'Birds Luxury Flowers', logo: '/img/birds-bn.webp', url: 'https://birds.pe' },
+      { name: 'Galana Atelier Floral', logo: '/img/galana-w.webp', url: 'https://galana.pe' },
+      { name: 'Birds Luxury Flowers', logo: '/img/birds-w.webp', url: 'https://birds.pe' },
       // TODO: cuando Aristocrat tenga sitio web, poner aquí su URL (ej.: 'https://aristocrat.pe'): el botón se activa solo
-      { name: 'Aristocrat', logo: '/img/aristocrat-bn.webp', url: '' },
+      { name: 'Aristocrat', logo: '/img/aristocrat-w.webp', url: '' },
     ],
   },
   {
     id: 'tecnologia',
     image: '/img/tecnologia.webp',
     companies: [
-      { name: 'Monarca Technology', logo: '/img/monarca-bn.webp', url: 'https://monarcacore.com' },
+      { name: 'Monarca Technology', logo: '/img/monarca-w.webp', url: 'https://monarcacore.com' },
     ],
   },
   {
@@ -44,28 +44,28 @@ export const unitMeta: { id: UnitId; image?: string; companies: { name: string; 
     image: '/img/imprenta.webp',
     companies: [
       // TODO: cuando Reichs Branding Lab tenga sitio web, poner aquí su URL: el botón se activa solo
-      { name: 'Reichs Branding Lab', logo: '/img/reichs-bn.webp', url: '' },
+      { name: 'Reichs Branding Lab', logo: '/img/reichs-w.webp', url: '' },
     ],
   },
   {
     id: 'rosas',
     image: '/img/rosas.webp',
     companies: [
-      { name: 'Rey Roses', logo: '/img/rey-roses-bn.webp', url: 'https://reyruses.com' },
+      { name: 'Rey Roses', logo: '/img/rey-roses-w.webp', url: 'https://reyruses.com' },
     ],
   },
   {
     id: 'salud',
     image: '/img/salud.webp',
     companies: [
-      { name: 'Solkan', logo: '/img/solkan-bn.webp', url: 'https://solkan.pe' },
+      { name: 'Solkan', logo: '/img/solkan-w.webp', url: 'https://solkan.pe' },
     ],
   },
   {
     id: 'consultoria',
     image: '/img/consultoria.webp',
     companies: [
-      // TODO: agregar logo: '/img/arrmare-consulting-bn.webp' cuando exista
+      // TODO: agregar logo: '/img/arrmare-consulting-w.webp' cuando exista
       { name: 'ARRMARE Consulting', url: 'https://arrmareconsulting.com' },
     ],
   },

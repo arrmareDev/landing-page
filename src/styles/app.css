@@ -201,7 +201,7 @@
 .panel__body strong { font-family: var(--font-display); font-size: 2rem; font-weight: 400; line-height: 1.1; }
 .panel__summary { color: #ffffffd1; font-size: .92rem; line-height: 1.55; }
 .panel__logos { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
-.panel__logos img { height: 58px; width: 58px; margin-left: -6px; object-fit: contain; filter: brightness(0) invert(1); opacity: .9; }
+.panel__logos img { height: 58px; width: 58px; margin-left: -6px; object-fit: contain; opacity: .9; }
 .panel__logo-name { font-family: var(--font-display); font-size: 1.05rem; color: #fff; border: 1px solid rgba(255,255,255,.4); padding: 4px 12px; }
 .panel__cta { display: inline-flex; align-items: center; gap: 10px; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--color-accent-lt); }
 .panel__cta i { font-style: normal; transition: transform .4s var(--ease-out); }
@@ -266,7 +266,7 @@
 .co { display: grid; grid-template-columns: 120px 1fr; gap: 22px; padding: 24px 0; border-bottom: var(--line-dark); }
 .co__logo { background: var(--color-black); height: 110px; display: grid; place-items: center; padding: 16px; transition: background .4s; }
 .co:hover .co__logo { background: #1b1814; }
-.co__logo img { max-height: 100%; max-width: 100%; object-fit: contain; filter: brightness(0) invert(1); }
+.co__logo img { max-height: 100%; max-width: 100%; object-fit: contain; }
 .co__logo span { font-family: var(--font-display); color: #fff; text-align: center; font-size: 1rem; line-height: 1.15; letter-spacing: .06em; }
 .co__tag { font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: var(--color-accent); }
 .co__info h4 { font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; line-height: 1.15; margin: 2px 0 6px; }
